@@ -13,7 +13,7 @@ RUN wget -O /app/FTB.zip https://addons-origin.cursecdn.com/files/2439/681/FTBBe
 RUN echo "eula=true" > eula.txt
 
 EXPOSE 25565
-VOLUME ["/app/world"]
+VOLUME ["/app"]
 
 ENTRYPOINT ["/bin/bash"]
 CMD ["/app/ServerStart.sh"]
