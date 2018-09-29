@@ -5,7 +5,7 @@ RUN apk update && apk add wget
 WORKDIR /app
 ADD docker-entrypoint.sh /
 
-RUN wget -O /app/FTB.zip https://media.forgecdn.net/files/2481/284/FTBPresentsSkyfactory3Server_3.0.15.zip \
+RUN wget -O /app/FTB.zip https://media.forgecdn.net/files/2620/528/FTBContinuumServer_1.5.2.zip \
   && unzip FTB.zip && rm /app/FTB.zip \
   && /bin/sh /app/FTBInstall.sh \
   && echo "eula=true" > eula.txt
