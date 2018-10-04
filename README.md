@@ -22,7 +22,7 @@ docker run -d -p 25565:25565 trojan295/minecraft-server:<TAG>
 
 To persist the world, backups, op list, whitelist and banned list mount a volume under  `/data`:
 ```
-docker run -d -p 25565:25565 -v mc-world-data:/app trojan295/minecraft-server:<TAG>
+docker run -d -p 25565:25565 -v mc-world-data:/data trojan295/minecraft-server:<TAG>
 ```
 
 # Configuration
@@ -46,6 +46,6 @@ docker run -d -p 25565:25565 -e MINECRAFT_MOTD="Some other MOTD" trojan295/minec
 If the **MINECRAFT_RCON_PASSWORD** environment variable is set, then the server will start RCON listening on port 25575.
 The images have `rcon-cli` (https://github.com/itzg/rcon-cli) binary embedded. To run it exec in the containter eg.:
 ```
-docker exec -it <container_name> /app/rcon-cli
+docker exec -it <container_name> /app/rcon-cli --port 25575 --password <RCON_PASSWORD>
 ```
 
